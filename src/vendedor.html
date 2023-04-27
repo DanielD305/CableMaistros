@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../vendor/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
     <!-- app CSS -->
     <link id="theme" rel="stylesheet" href="../css/redsidebar.css" type="text/css">
-    <title>CableMaistros/Clientes</title>
+    <title>CableMaistros/Vendedores</title>
 </head>
 <body class="fixed-header sidebar-right-close">
     <!-- page loader ends  -->
@@ -31,7 +31,7 @@
                             <i class="material-icons text-white">widgets</i>
                         </button>
                         <a href="../src/dashboard.html" class="logo"><span class="text-hide-xs"><b>Cable
-                                </b>Maistros</span> | Clientes <span id="nameSucursal"></span></a>
+                                </b>Maistros</span> | Vendedores <span id="nameSucursal"></span></a>
                     </div>
                     <div class="col text-center p-xs-0">
                         <ul class="time-day">
@@ -106,12 +106,12 @@
                 <div class="container my-3 main-container">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h2 class="content-color-primary page-title">Clientes</h2>
-                            <p class="content-color-secondary page-sub-title">Gestiona los clientes de la empresa.</p>
+                            <h2 class="content-color-primary page-title">Vendedores</h2>
+                            <p class="content-color-secondary page-sub-title">Gestiona los Vendedores de la empresa.</p>
                         </div>
                         <div class="col-auto">
                             <Button class="btn btn-danger" type="button" id="BtnNew">
-                                <i class="material-icons">add</i> Agregar Cliente
+                                <i class="material-icons">add</i> Agregar Vendedor
                             </Button>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <div class="card-header">
                             <div class="media">
                                 <div class="media-body">
-                                    <h4 class="content-color-primary mb-0">Listado de Clientes</h4>
+                                    <h4 class="content-color-primary mb-0">Listado de Vendedores</h4>
                                 </div>
                                 <a href="javascript:void(0);"
                                    class="icon-circle icon-30 content-color-secondary fullscreenbtn">
@@ -136,18 +136,17 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table " id="tableclientes">
+                            <table class="table " id="tableVendedores">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Codigo Cliente</th>
-                                        <th>Nit</th>
                                         <th>Nombre</th>
                                         <th>Telefono</th>
+                                        <th>Email</th>
                                         <th>&nbsp;</th>
                                     </tr>
                                 </thead>
-                                <tbody id="listClientes">
+                                <tbody id="listVendedores">
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
@@ -157,13 +156,13 @@
             </div>
         </div>
         <!-- content page ends -->
-        <!-- Modal para crear nuevo Cliente -->
+        <!-- Modal para crear nuevo Vendedor -->
         <div class="modal fade" id="mdNuevo" tabindex="-1" role="dialog" aria-labelledby="ModalNuevoLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalNuevoLabel">Nuevo Cliente</h5>
+                        <h5 class="modal-title" id="ModalNuevoLabel">Nuevo Vendedor</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -178,8 +177,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="newNit">Nit</label>
-                                    <input type="text" class="form-control" id="newNit" required autocomplete="off">
+                                    <label for="newEmail">Email</label>
+                                    <input type="text" class="form-control" id="newEmail" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -197,13 +196,13 @@
                 </div>
             </div>
         </div>
-        <!-- Modal para editar el cliente-->
+        <!-- Modal para editar el Vendedor-->
         <div class="modal fade" id="mdEdit" tabindex="-1" role="dialog" aria-labelledby="ModalEditLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalEditLabel">Actualizar Cliente</h5>
+                        <h5 class="modal-title" id="ModalEditLabel">Actualizar Vendedor</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -221,8 +220,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="editNit">Nit </label>
-                                    <input type="text" class="form-control" id="editNit" required autocomplete="off">
+                                    <label for="editEmail">Email </label>
+                                    <input type="text" class="form-control" id="editEmail" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -247,14 +246,14 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalDeleteLabel">Eliminar Cliente</h5>
+                        <h5 class="modal-title" id="ModalDeleteLabel">Eliminar Vendedor</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <input type="hidden" id="idDelete">
-                        <center><strong>¿Está seguro que desea eliminar este cliente?</strong></center>
+                        <center><strong>¿Está seguro que desea eliminar este Vendedor?</strong></center>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -291,6 +290,6 @@
     <script src="../vendor/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/DataTables-1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script type="module" src="../js/acces.js"></script>
-    <script src="../js/cliente.js"></script>
+    <script src="../js/vendedor.js"></script>
 </body>
 </html>

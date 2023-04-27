@@ -1,4 +1,4 @@
-let ListaClientes = [];
+let ListaVendedores = [];
 $(function () {
 
    
@@ -14,7 +14,7 @@ $(function () {
     $("#formNuevo").submit(function () {
       $('#btnInsert').attr('disabled', true); //deshabilita
   
-      AddClientes();
+      AddVendedores();
       return false;
   
     });
@@ -23,7 +23,7 @@ $(function () {
     $("#formUpdate").submit(function () {
       $('#btnUpdate').attr('disabled', true);
   
-      updateClientes();
+      updateVendedores();
   
       return false;
     });
@@ -31,45 +31,44 @@ $(function () {
     //Metodo para confirmar la eliminacion
     $("#btnDelete").click(function () {
       $("#btnDelete").attr("disabled", true); //deshabilita
-      deleteCliente();
+      deleteVendedores();
     })
   
   
-    GetClientes();
+    GetVendedores();
   });
 
 
 
 
-const GetClientes = () => {
+const GetVendedores = () => {
 
-    if ($.fn.DataTable.isDataTable("#tableclientes")) {
-        $("#tableclientes").DataTable().destroy();
+    if ($.fn.DataTable.isDataTable("#tableVendedores")) {
+        $("#tableVendedores").DataTable().destroy();
       }
 
-    ListaClientes = localStorage.getItem('ListaClientes') != null ? JSON.parse(localStorage.getItem('ListaClientes')) : [];
+      ListaVendedores = localStorage.getItem('ListaVendedores') != null ? JSON.parse(localStorage.getItem('ListaVendedores')) : [];
 
-    $("#listClientes").html(null);
+    $("#listVendedores").html(null);
     let contador = 1;
 
     
-    ListaClientes.forEach(element => {
+    ListaVendedores.forEach(element => {
       var tr = `<tr class="odd">
                       <td>${contador}</td>
-                      <td>${element.id}</td>
-                      <td>${element.nit}</td>
                       <td>${element.nombre}</td>
                       <td>${element.telPersonal}</td>
+                      <td>${element.email}</td>
                       <td class = "center">
                           <span class="btn btn-outline-success btn-sm edit d-grid gap-2 col-5 mx-auto" onclick="openEdit(${element.id})">Editar</span> 
                           <span class="btn btn-outline-danger btn-sm delete d-grid gap-2 col-5 mx-auto" onclick="openDelete(${element.id})" >Eliminar</span>
                       </td>
                       </tr>`;
-      $("#listClientes").append(tr);
+      $("#listVendedores").append(tr);
       contador++;
     });
 
-    $("#tableclientes").DataTable({
+    $("#tableVendedores").DataTable({
       order: [[0, "asc"]],
       destroy: true,
       language: { "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json" },
@@ -77,21 +76,21 @@ const GetClientes = () => {
 
 }
  
-const AddClientes = () => {
+const AddVendedores = () => {
     try {
-        ListaClientes.push( {
-            id: ListaClientes.length + 1,
+        ListaVendedores.push( {
+            id: ListaVendedores.length + 1,
             nombre: $("#newNombre").val(),
-            nit: $("#newNit").val(),
+            email: $("#newEmail").val(),
             telPersonal: $("#newTelPer").val()
           });
     
-          localStorage.setItem('ListaClientes', JSON.stringify(ListaClientes));  
+          localStorage.setItem('ListaVendedores', JSON.stringify(ListaVendedores));  
     
     
           $.toast({
             heading: "EXITO",
-            text: "Cliente agregado con exito",
+            text: "Vendedor agregado con exito",
             showHideTransition: "slide",
             icon: "success",
             position: "bottom-right",
@@ -111,17 +110,17 @@ const AddClientes = () => {
     LimpiarForm();
     $("#mdNuevo").modal("hide");
 
-    GetClientes();
+    GetVendedores();
 }
 
 const openEdit = (id) => {
 
-  ListaClientes.forEach( element => {
+    ListaVendedores.forEach( element => {
 
     if(element.id == id){
 
       $("#idEdit").val(element.id);
-      $("#editNit").val(element.nit)
+      $("#editEmail").val(element.email)
       $("#editNombre").val(element.nombre);
       $("#editTelper").val(element.telPersonal);
     }
@@ -130,30 +129,30 @@ const openEdit = (id) => {
 }
 
 
-const updateClientes = () => {
+const updateVendedores = () => {
 
   try 
   {
 
-    let idCliente = $("#idEdit").val()
+    let idVendedor = $("#idEdit").val()
 
-    ListaClientes.forEach( element => {
+    ListaVendedores.forEach( element => {
 
-      if(element.id == idCliente){
+      if(element.id == idVendedor){
 
-        element.nit = $("#editNit").val();
+        element.email = $("#editEmail").val();
         element.nombre = $("#editNombre").val();
         element.telPersonal = $("#editTelper").val();
       }
 
     });
 
-    let NewList = JSON.stringify(ListaClientes);
-    localStorage.setItem('ListaClientes',NewList);
+    let NewList = JSON.stringify(ListaVendedores);
+    localStorage.setItem('ListaVendedores',NewList);
 
     $.toast({
       heading: "EXITO",
-      text: "Cliente actualizado con exito",
+      text: "Vendedor actualizado con exito",
       showHideTransition: "slide",
       icon: "success",
       position: "bottom-right",
@@ -173,7 +172,7 @@ const updateClientes = () => {
 
   LimpiarForm();
   $("#mdEdit").modal("hide");
-  GetClientes();
+  GetVendedores();
 }
 
 
@@ -184,7 +183,7 @@ const openDelete = (id) => {
   $("#idDelete").val(id);
 }
 
-const deleteCliente = () => {
+const deleteVendedores = () => {
 
   try 
   {
@@ -193,7 +192,7 @@ const deleteCliente = () => {
 
     
 
-    ListaClientes.forEach( element => {
+    ListaVendedores.forEach( element => {
 
       if(element.id != id){
         
@@ -203,11 +202,11 @@ const deleteCliente = () => {
     });
 
     let NewList = JSON.stringify(NuevaLista);
-    localStorage.setItem('ListaClientes',NewList);
+    localStorage.setItem('ListaVendedores',NewList);
 
     $.toast({
       heading: "EXITO",
-      text: "Cliente eliminado con exito",
+      text: "Vendedor eliminado con exito",
       showHideTransition: "slide",
       icon: "success",
       position: "bottom-right",
@@ -216,7 +215,7 @@ const deleteCliente = () => {
 
     LimpiarForm();
     $("#mdDelete").modal("hide");
-    GetClientes();
+    GetVendedores();
 
   } catch (error) 
   {
@@ -231,7 +230,6 @@ const deleteCliente = () => {
     
   }
 }
-
 
 
 const LimpiarForm = () => {
