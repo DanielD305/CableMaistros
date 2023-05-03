@@ -1,0 +1,37 @@
+.btn-lg {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    width: 350px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+  }
+
+
+
+  #boton1 {
+    margin-left: -350px; /* añade un pequeño margen entre los botones */
+  }
+  
+  #boton2 {
+    margin-left: 100px; /* añade un pequeño margen entre los botones */
+  }
+  
+  #boton3 {
+    margin-left: 550px; /* añade un pequeño margen entre los botones */
+  }
+
+  .page-title {
+    animation: moveTitle 10s linear infinite;
+  }
+  
+  @keyframes moveTitle {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

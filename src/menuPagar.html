@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <!-- favicons -->
+    <link rel="apple-touch-icon" href="../img/favicon-apple.png">
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
+    <!-- daterange CSS -->
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker-master/daterangepicker.css">
+    <!-- jvector map CSS -->
+    <link rel="stylesheet" href="../vendor/jquery-jvectormap/jquery-jvectormap-2.0.3.css">
+    <!-- dataTable CSS -->
+    <link rel="stylesheet" href="../vendor/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+    <!-- app CSS -->
+    <link id="theme" rel="stylesheet" href="../css/redsidebar.css" type="text/css">
+    <!-- MenuCliente Css-->
+    <link rel="stylesheet" type="text/css" href="/css/MenuCliente.css">
+    <title>CableMaistros/Menu de Clientes</title>
+</head>
+<body class="fixed-header sidebar-right-close">
+    <!-- page loader ends  -->
+    <div class="wrapper">
+        <!-- main header -->
+        <header class="main-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-auto pl-0">
+                        <button class="btn red btn-icon" id="left-menu">
+                            <i class="material-icons text-white">widgets</i>
+                        </button>
+                        <a href="../src/dashboard.html" class="logo"><span class="text-hide-xs"><b>Cable
+                                </b>Maistros</span> | Menu de Clientes <span id="nameSucursal"></span></a>
+                    </div>
+                    <div class="col text-center p-xs-0">
+                        <ul class="time-day">
+                            <li class="text-right">
+                                <p class="header-color-primary">
+                                    <span class="header-color-secondary" id="MonthSystem"></span><small id="YearSystem"></small>
+                                </p>
+                                <h2 id="DaySystem"></h2>
+                            </li>
+                            <li class="text-left">
+                                <h2><span class="header-color-secondary font-weight-light"><sup></sup></span></h2>
+                                <p class="header-color-primary text-hide-lg">
+                                    <span class="header-color-secondary"></span><h2 id="TimeSystem"></h2>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <div class="dropdown d-inline-block">
+                            <a class="btn header-color-secondary dropdown-toggle username" href="../#" role="button"
+                               id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <figure class="userpic"><img src="#" alt=""></figure>
+                                <h5 class="text-hide-xs">
+                                    <small class="header-color-secondary">Bienvenido,</small>
+                                    <span class="header-color-primary" id="txtName"></span>
+                                </h5>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown"
+                                 aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item pink-gradient-active" href="cambiarclave.html"
+                                   id="open-right-sidebar">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            Cambiar Clave
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="header-color-secondary ml-2">
+                                                <i class="material-icons vm">settings</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a class="dropdown-item pink-gradient-active" href="../login.html">
+                                    <div class="row align-items-center">
+                                        <div class="col" id="btnCerrarSesion">
+                                            Cerrar Sesion
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="text-danger ml-2">
+                                                <i class="material-icons vm">exit_to_app</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- main header ends -->
+        <!-- sidebar left -->
+        <div class="sidebar sidebar-left">
+            <ul class="nav flex-column" id="menuAccess">
+            </ul>
+        </div>
+        <!-- content page title -->
+        <div class="container-fluid bg-light-opac">
+            <div class="row">
+              <div class="container my-4 main-container">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h1 class="content-color-primary page-title text-center col-12">!Bienvenido! Elige la opcion que deseas realizar</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- content page title ends -->
+        <!-- content page -->
+        <div class="container text-center mt-*">
+            <button class="btn btn-danger rounded-circle btn-round btn-hover btn-lg" id="boton1">
+            <h4>Internet</h4>
+            </button>
+            <button class="btn btn-danger rounded-circle btn-round btn-lg" id="boton2">
+            <h4>Saldo</h4>
+            </button>
+            <button class="btn btn-danger rounded-circle btn-round btn-lg" id="boton3">
+            <h4>Planes</h4>
+              </button>
+        </div>
+        <!-- content page ends -->        
+    </div>
+    <footer class="border-top">
+        <div class="row">
+            <div class="col-12 col-sm-6">Desarrollado por <a href="" target="_blank">Los Maistros</a></div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <!--<script src="../js/popper.min.js"></script> -->
+    <script src="../vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+    <!-- Swiper carousel jquery file -->
+    <script src="../vendor/swiper/js/swiper.min.js"></script>
+    <!-- Chart js jquery file -->
+    <script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../vendor/chartjs/utils.js"></script>
+    <!-- datepicker jquery file -->
+    <script src="../vendor/bootstrap-daterangepicker-master/moment.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker-master/daterangepicker.js"></script>
+    <!-- jVector map jquery file -->
+    <script src="../vendor/jquery-jvectormap/jquery-jvectormap.js"></script>
+    <script src="../vendor/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jquery toast message file -->
+    <script src="../vendor/jquery-toast-plugin-master/dist/jquery.toast.min.js"></script>
+    <!-- DataTable jquery file -->
+    <script src="../vendor/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/DataTables-1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script type="module" src="../js/acces.js"></script>
+</body>
+</html>
