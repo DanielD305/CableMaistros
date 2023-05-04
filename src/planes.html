@@ -130,6 +130,13 @@
                             <h2 class="content-color-primary page-title">Planes disponibles</h2>
                             <p class="content-color-secondary page-sub-title">Realiza <i class="el el-lastfm"></i>
                                 la compra de tus planes preferidos.</p>
+                            
+                            <select class=" col-3 form-control" id="Planes">
+                                <option value="0" selected disabled>Elige una opcion</option>
+                                <option value="1">Cable</option>
+                                <option value="2">Internet</option>
+                                <option value="3">Teléfono</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -137,97 +144,8 @@
         </div>
         <!-- content page title ends -->
         <!-- content page -->
-        <div class="form-row">
-            <div class="container mt-2 main-container">
-                <div class="card" style="width: 18rem;">
-                    <div class="bg-danger rounded-top">
-                        <center><h6>postpago</h6></center>
-                    </div>
-                    <div class="card-body bg-light-opac rounded">
-                      <h6 class="card-title text-danger"><b><center> Q200</center><small><center><p>al mes</p></center></small></b></h6>
-                      <span><center>Todo incluido</center></span>
-                    </div>
-                    <ul class="list-group list-group-flush text-center" >
-                      <li class="list-group-item green text-white rounded">Spotify</li>
-                      <li class="list-group-item blue text-white rounded">Facebook</li>
-                      <li class="list-group-item bg-dark text-white rounded">TikTok</li>
-                    </ul>
-                    <div class="card-body">
-                      <button class="btn btn-rounded red ">Comprar</button>
-                      <button class="btn btn-rounded "type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Ver detalles</button>
-                      <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <p>Redes ilimitadas 
-                                <span>
-                                    <i class="fab fa-facebook"></i>
-                                    <i class="fab fa-facebook-messenger"></i>
-                                    <i class="fab fa-whatsapp"></i>
-                                    <i class="fab fa-instagram"></i>
-                                    <i class="fab fa-snapchat"></i>
-                                </span>
-                            </p>
-                            <small>
-                                <i class="far fa-clock"> minutos ilimitados</i>
-                                <br> 
-                                para todos los operadores en Guatemala y CentroAmerica
-                            </small>
-                            <small>
-                                <i class="far fa-comment-alt"> SMS</i>
-                                 <br>
-                                 ilimitados para todos los operadores
-                            </small>
-                                
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="container mt-2 main-container">
-                <div class="card" style="width: 18rem;">
-                    <div class="bg-danger rounded-top">
-                        <center><h6>postpago</h6></center>
-                    </div>
-                    <div class="card-body bg-light-opac rounded">
-                      <h6 class="card-title text-danger"><b><center> Q200</center><small><center><p>al mes</p></center></small></b></h6>
-                      <span><center>Todo incluido</center></span>
-                    </div>
-                    <ul class="list-group list-group-flush text-center" >
-                      <li class="list-group-item green text-white rounded">Spotify</li>
-                      <li class="list-group-item blue text-white rounded">Facebook</li>
-                      <li class="list-group-item bg-dark text-white rounded">TikTok</li>
-                    </ul>
-                    <div class="card-body">
-                      <button class="btn btn-rounded red ">Comprar</button>
-                      <button class="btn btn-rounded "type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">Ver detalles</button>
-                      <div class="collapse" id="collapseExample2">
-                        <div class="card card-body">
-                            <p>Redes ilimitadas 
-                                <span>
-                                    <i class="fab fa-facebook"></i>
-                                    <i class="fab fa-facebook-messenger"></i>
-                                    <i class="fab fa-whatsapp"></i>
-                                    <i class="fab fa-instagram"></i>
-                                    <i class="fab fa-snapchat"></i>
-                                </span>
-                            </p>
-                            <small>
-                                <i class="far fa-clock"> minutos ilimitados</i>
-                                <br> 
-                                para todos los operadores en Guatemala y CentroAmerica
-                            </small>
-                            <small>
-                                <i class="far fa-comment-alt"> SMS</i>
-                                 <br>
-                                 ilimitados para todos los operadores
-                            </small>
-                                
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-            </div>
+        <div class=" row p-2" id="PanelPlanes">
+
         </div>
        
         
@@ -294,7 +212,7 @@
     <script src="../vendor/DataTables-1.10.18/js/dataTables.bootstrap4.min.js"></script>\
     <script src="../js/chosen.jquery.js"></script>
     <script type="module" src="../js/acces.js"></script>
-    <script src="../js/cotizacion.js"></script>
+    <script src="../js/planes.js"></script>
     <script src="https://kit.fontawesome.com/0fe6938928.js" crossorigin="anonymous"></script>
 </body>
 
