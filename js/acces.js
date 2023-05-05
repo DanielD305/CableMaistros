@@ -1,3 +1,63 @@
+let listaPaginas = [
+  {
+    idMenu: 1,
+    icono: "supervisor_account",
+    menu: "Supervisor",
+    path: "supervisor.html",
+    pagina: "Supervisores"
+  },
+  {
+    idMenu: 1,
+    icono: "supervisor_account",
+    menu: "Supervisor",
+    path: "listaOrdenesTrabajo.html",
+    pagina: "Ordenes de Trabajo"
+  },
+  {
+    idMenu: 2,
+    icono: "build",
+    menu: "Instalador",
+    path: "cliente.html",
+    pagina: "Clientes"
+  },
+  {
+    idMenu: 3,
+    icono: "store",
+    menu: "Vendedor",
+    path: "vendedor.html",
+    pagina: "Vendedores"
+  },
+  {
+    idMenu: 4,
+    icono: "person",
+    menu: "Cliente",
+    path: "menuCliente.html",
+    pagina: "Consulte compre y pague"
+  },  
+  {
+    idMenu: 4,
+    icono: "person",
+    menu: "Cliente",
+    path: "menuPagar.html",
+    pagina: "Pagar"
+  },
+  {
+    idMenu: 4,
+    icono: "person",
+    menu: "Cliente",
+    path: "menuConsultar.html",
+    pagina: "Facturas planes y consumos"
+  },
+  {
+    idMenu: 4,
+    icono: "person",
+    menu: "Cliente",
+    path: "planes.html",
+    pagina: "Planes"
+  },
+];
+
+
 const user = "Dani";
 var url = window.location;
 const Apiurl = "https://localhost:7283/api/";
@@ -14,7 +74,7 @@ $(function () {
         
     });
 
-    //getPermisos();
+    getPermisos();
 
     setTimeout(function () { $(".loader-logo").fadeOut()}, 3000);
 
@@ -52,25 +112,12 @@ $(function () {
 
 
 const getPermisos = () => {
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-      
-
-      fetch(Apiurl+"AsignarPermisos/GetPermiososUsuario/"+user, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            
+  
             let menu = 0;
             let html = '';
             //let existePermiso = false; 
             //existePermiso = pathname == "dashboard.html" || pathname == "cambiarclave.html" ? true : false;
-            result.forEach(element => {
-
-                /*if(element.path == pathname){
-                    existePermiso = true;
-                  }*/
+            listaPaginas.forEach(element => {
           
                   if (menu != element.menu) {
           
@@ -110,11 +157,6 @@ const getPermisos = () => {
                 //window.location = "dashboard.html";
   
             }*/
-
-
-        })
-        .catch(error => console.log('error', error));
-
 
 }
 
