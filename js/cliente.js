@@ -1,7 +1,7 @@
 let ListaClientes = [];
 $(function () {
 
-   
+    Clientesdefault();
 
     $('#BtnNew').click(function () {
       $('#mdNuevo').modal('show')
@@ -39,6 +39,42 @@ $(function () {
   });
 
 
+const Clientesdefault = () =>{
+  ListaClientes = [
+    {
+      id: 1,
+      nit: "12345678-9",
+      nombre: "Juan Perez",
+      telPersonal: "555-1234"
+    },
+    {
+      id: 2,
+      nit: "98765432-1",
+      nombre: "Maria Garcia",
+      telPersonal: "555-5678"
+    },
+    {
+      id: 3,
+      nit: "24681012-3",
+      nombre: "Pedro Gomez",
+      telPersonal: "555-2468"
+    },
+    {
+      id: 4,
+      nit: "13579246-8",
+      nombre: "Ana Rodriguez",
+      telPersonal: "555-1357"
+    },
+    {
+      id: 5,
+      nit: "86420918-2",
+      nombre: "Luisa Martinez",
+      telPersonal: "555-8642"
+    }
+  ];
+
+  localStorage.setItem('ListaClientes', JSON.stringify(ListaClientes)); 
+}
 
 
 const GetClientes = () => {

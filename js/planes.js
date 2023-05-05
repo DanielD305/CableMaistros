@@ -79,6 +79,9 @@ let listaPlanesTelefono = [
   ];
 
 $(function () {
+
+    
+
    $("#Planes").change(function () { 
     $("#PanelPlanes").html(null);
     let plan = $("#Planes").val()
@@ -120,7 +123,7 @@ const drawPlanesCable = () => {
                 <hr>
             </div>
             <div class="card-body">
-                <button class="btn btn-rounded red ">Comprar</button>
+                <button class="btn btn-rounded red " onclick="openComprar(${plan.id})" > Comprar</button>
                 <button class="btn btn-rounded "type="button" data-toggle="collapse" data-target="#collapseExample${contador}" aria-expanded="false" aria-controls="collapseExample${contador}">Ver detalles</button>
                 <div class="collapse" id="collapseExample${contador}">
                     <div class="card card-body">
@@ -173,7 +176,7 @@ const drawPlanesInternet = () => {
           <li class="list-group-item bg-dark text-white rounded">TikTok</li>
         </ul>
         <div class="card-body">
-          <button class="btn btn-rounded red ">Comprar</button>
+          <button class="btn btn-rounded red " onclick="openComprar(${plan.id})" >Comprar</button>
           <button class="btn btn-rounded "type="button" data-toggle="collapse" data-target="#collapseExample${contador}" aria-expanded="false" aria-controls="collapseExample${contador}">Ver detalles</button>
           <div class="collapse" id="collapseExample${contador}">
             <div class="card card-body">
@@ -228,7 +231,7 @@ const drawPlanesTelefono = () => {
                 <hr>
             </div>
             <div class="card-body">
-                <button class="btn btn-rounded red ">Comprar</button>
+                <button class="btn btn-rounded red " onclick="openComprar(${plan.id})">Comprar</button>
                 <button class="btn btn-rounded "type="button" data-toggle="collapse" data-target="#collapseExample${contador}" aria-expanded="false" aria-controls="collapseExample${contador}">Ver detalles</button>
                 <div class="collapse" id="collapseExample${contador}">
                     <div class="card card-body">
@@ -253,6 +256,14 @@ const drawPlanesTelefono = () => {
     $("#PanelPlanes").append(html);
     }
 }
+
+const openComprar = (idCompra) => {
+
+    
+}
+
+
+
 
 
 //castea valores a formato GTQ

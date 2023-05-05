@@ -19,6 +19,13 @@ let listaPaginas = [
     menu: "Instalador",
     path: "cliente.html",
     pagina: "Clientes"
+  },  
+  {
+    idMenu: 2,
+    icono: "build",
+    menu: "Instalador",
+    path: "instalador.html",
+    pagina: "Instaladores"
   },
   {
     idMenu: 3,

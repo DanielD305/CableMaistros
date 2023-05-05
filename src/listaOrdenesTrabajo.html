@@ -135,81 +135,56 @@
         <!-- content page -->
         <div class="container mt-4 main-container">
             <div class="row">
+                <div class="col-sm-6">
+                    <div class="card mb-4 fullscreen">
+                        <div class="card-body">
+                            <label for="Clientes">Seleccione un cliente</label>
+                            <select  class="form-control" id="Clientes"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card mb-4 fullscreen">
+                        <div class="card-body">
+                            <label for="instalador">Seleccione un instalador</label>
+                            <select  class="form-control" id="instalador"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-12">
                     <div class="card mb-4 fullscreen">
                         <div class="card-body">
-                            <table class="table " id="tableOrdenesTrabajo">
-                                <thead>
-                                    <tr>
-                                        <th># ORDEN</th>
-                                        <th>ASIGNADA POR</th>
-                                        <th>CLIENTE</th>
-                                        <th>FECHA COT.</th>
-                                        <th>FECHA ENTREGA.</th>
-                                        <th>TOT HORAS</th>
-                                        <th>% COMPLETADO</th>
-                                        <th>ESTADO</th>
-                                        <th>&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="listOrdenesTrabajo">
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
+                            <label for="descripcion">Ingrese el detalle de lo que se va a instalar</label>
+                            <textarea class="form-control" name="" id="descripcion" rows="3"></textarea>
+                        </div>
+      
+                        <div class="card-body">
+                            <button id="Guardar" class="btn btn-block btn-danger">Guardar</button>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-sm-12"  id="RegistroAsignacion">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No.</th>
+                                <th>Cliente</th>
+                                <th>Instalador</th>
+                                <th>Observacion</th>
+                                <th>Estado</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
         <!-- content page ends -->
-        <!-- Modal para actualizar el proceso de los trabajos   -->
-        <div class="modal fade" id="mdWork" tabindex="-1" role="dialog" aria-labelledby="ModalNuevoLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalNuevoLabel">TRABAJO DE PINTURAS: </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="panelTrabajo" class="row">
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-info" id="btnUpdateTrabajo">Confirmar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-         <!-- Modal para finalizar la orden de trabajo-->
-        <div class="modal fade" id="mdEndWork" tabindex="-1" role="dialog" aria-labelledby="ModalNuevoLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalNuevoLabel"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" id="idOrdenTrabajo">
-                        <center><i class="text-warning material-icons" style="font-size: 100px;">warning</i></center>
-                        <center><h6>¿Esta seguro que desea concluir esta orden de Trabajo?</h6></center>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-info" id="btnUpdateTrabajo">Confirmar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+   
 
     </div>
     <footer class="border-top">
@@ -240,6 +215,8 @@
     <script src="../vendor/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/DataTables-1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script type="module" src="/js/acces.js"></script>
+    <script  src="/js/listaordenTrabajo.js"></script>
+
     <!--<script src="../js/listaOrdenesTrabajo.js"></script>-->
     
 
